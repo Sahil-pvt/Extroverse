@@ -6,13 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { useToast } from "@/components/ui/use-toast";
 
-import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
 import { SignupValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
-import Loader from "@/components/ui/shared/Loader";
+import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
+import { Loader } from "lucide-react";
 
 const SignupForm = () => {
   const { toast } = useToast();
@@ -30,8 +29,8 @@ const SignupForm = () => {
   });
 
   // Queries
-  const { mutateAsync: createUserAccount, isLoading: isCreatingAccount } = useCreateUserAccount();
-  const { mutateAsync: signInAccount, isLoading: isSigningInUser } = useSignInAccount();
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount();
+  const { mutateAsync: signInAccount, isPending: isSigningInUser } = useSignInAccount();
 
   // Handler
   const handleSignup = async (user: z.infer<typeof SignupValidation>) => {
@@ -82,7 +81,7 @@ const SignupForm = () => {
           Create a new account
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-          To use Extroverse, Please enter your details
+          To use extroverse, Please enter your details
         </p>
 
         <form
