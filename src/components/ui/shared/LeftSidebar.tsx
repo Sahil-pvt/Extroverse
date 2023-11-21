@@ -3,9 +3,9 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { INavLink } from "@/types";
 import { sidebarLinks } from "@/constants";
 import { Button } from "@/components/ui/button";
-import { useSignOutAccount } from "@/lib/react-query/queriesAndMutations";
 import { useUserContext, INITIAL_USER } from "@/context/AuthContext";
-import Loader from "./Loader";
+import { useSignOutAccount } from "@/lib/react-query/queriesAndMutations";
+import { Loader } from "lucide-react";
 
 const LeftSidebar = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const LeftSidebar = () => {
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
           <img
-            src="/assets/images/logop.png"
+            src="/assets/images/logop1.png"
             alt="logo"
             width={170}
             height={36}
