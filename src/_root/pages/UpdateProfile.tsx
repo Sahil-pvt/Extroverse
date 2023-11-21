@@ -73,7 +73,7 @@ const UpdateProfile = () => {
       bio: updatedUser?.bio,
       imageUrl: updatedUser?.imageUrl,
     });
-    return navigate(`/profile/${id}`);
+    return navigate('/');
   };
 
   return (
