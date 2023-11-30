@@ -1,5 +1,5 @@
 import PostForm from "@/components/ui/forms/PostForm"
-import Loader2 from "@/components/ui/shared/Loader";
+import Loader from "@/components/ui/shared/Loader";
 import { useGetPostById } from "@/lib/react-query/queriesAndMutations";
 import { useParams } from "react-router-dom"
 
@@ -8,7 +8,7 @@ const EditPost = () => {
   const {id} = useParams();
   const {data: post, isPending} = useGetPostById(id || '');
 
-  if(isPending) return <Loader2 className='h-8 w-8 animate-spin' />
+  if(isPending) return <Loader />
 
   return (
     <div className="flex flex-1">
