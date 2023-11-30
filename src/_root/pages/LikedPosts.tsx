@@ -1,6 +1,6 @@
 import GridPostList from "@/components/ui/shared/GridPostList";
 import { useGetCurrentUser } from "@/lib/react-query/queriesAndMutations";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 
 const LikedPosts = () => {
@@ -9,7 +9,7 @@ const LikedPosts = () => {
   if (!currentUser)
     return (
       <div className="flex-center w-full h-full">
-        <Loader />
+        <Loader2 className='h-8 w-8 animate-spin' />
       </div>
     );
 

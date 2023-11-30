@@ -2,7 +2,7 @@ import PostCard from "@/components/ui/shared/PostCard";
 import UserCard from "@/components/ui/shared/UserCard";
 import { useGetRecentPosts, useGetUsers } from "@/lib/react-query/queriesAndMutations";
 import { Models } from "appwrite";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 // import { useToast } from "@/components/ui/use-toast";
 
@@ -39,7 +39,7 @@ const Home = () => {
         <div className="home-posts">
           <h2 className="h3-bold md:h2-bold text-left w-full">Home Feed</h2>
           {isPostLoading && !posts ? (
-            <Loader />
+            <Loader2 className='h-8 w-8 animate-spin' />
           ) : (
             <ul className="flex flex-col flex-1 gap-9 w-full ">
               {posts?.documents.map((post: Models.Document) => (
@@ -55,7 +55,7 @@ const Home = () => {
       <div className="home-creators">
         <h3 className="h3-bold text-light-1">Top Creators</h3>
         {isUserLoading && !creators ? (
-          <Loader />
+          <Loader2 className='h-8 w-8 animate-spin' />
         ) : (
           <ul className="grid 2xl:grid-cols-2 gap-6">
             {creators?.documents.map((creator) => (

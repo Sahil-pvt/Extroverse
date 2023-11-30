@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import useDebounce from "@/hooks/useDebounce";
 import { Input } from "@/components/ui/input";
 import GridPostList from "@/components/ui/shared/GridPostList";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useGetPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
 
 
@@ -15,7 +15,7 @@ export type SearchResultProps = {
 
 const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultProps) => {
   if (isSearchFetching) {
-    return <Loader />;
+    return <Loader2 className='h-8 w-8 animate-spin' />;
   } else if (searchedPosts && searchedPosts.documents.length > 0) {
     return <GridPostList posts={searchedPosts.documents} />;
   } else {
@@ -42,7 +42,7 @@ const Explore = () => {
   if (!posts)
     return (
       <div className="flex-center w-full h-full">
-        <Loader />
+        <Loader2 className='h-8 w-8 animate-spin' />
       </div>
     );
 
@@ -105,7 +105,7 @@ const Explore = () => {
 
       {hasNextPage && !searchValue && (
         <div ref={ref} className="mt-10">
-          <Loader />
+          <Loader2 className='h-8 w-8 animate-spin' />
         </div>
       )}
     </div>

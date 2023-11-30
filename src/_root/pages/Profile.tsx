@@ -11,7 +11,7 @@ import { LikedPosts } from "@/_root/pages";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queriesAndMutations";
 import GridPostList from "@/components/ui/shared/GridPostList";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 interface StabBlockProps {
   value: string | number;
@@ -35,7 +35,7 @@ const Profile = () => {
   if (!currentUser)
     return (
       <div className="flex-center w-full h-full">
-        <Loader />
+        <Loader2 className='h-8 w-8 animate-spin' />
       </div>
     );
 

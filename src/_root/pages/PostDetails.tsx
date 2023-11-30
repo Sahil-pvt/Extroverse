@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import GridPostList from "@/components/ui/shared/GridPostList";
 import PostStats from "@/components/ui/shared/PostStats";
 import { useGetPostById, useGetUserPosts, useDeletePost } from "@/lib/react-query/queriesAndMutations";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 const PostDetails = () => {
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const PostDetails = () => {
       </div>
 
       {isLoading || !post ? (
-        <Loader />
+        <Loader2 className='h-8 w-8 animate-spin' />
       ) : (
         <div className="post_details-card">
           <img
@@ -142,7 +142,7 @@ const PostDetails = () => {
           More Related Posts
         </h3>
         {isUserPostLoading || !relatedPosts ? (
-          <Loader />
+          <Loader2 className='h-8 w-8 animate-spin' />
         ) : (
           <GridPostList posts={relatedPosts} />
         )}

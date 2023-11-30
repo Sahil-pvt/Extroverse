@@ -1,7 +1,7 @@
 import GridPostList from "@/components/ui/shared/GridPostList";
 import { useGetCurrentUser } from "@/lib/react-query/queriesAndMutations";
 import { Models } from "appwrite";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 
 const Saved = () => {
@@ -30,7 +30,7 @@ const Saved = () => {
       </div>
 
       {!currentUser ? (
-        <Loader />
+        <Loader2 className='h-8 w-8 animate-spin' />
       ) : (
         <ul className="w-full flex justify-center max-w-5xl gap-9">
           {savePosts.length === 0 ? (

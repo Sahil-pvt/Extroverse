@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useGetUserById, useUpdateUser } from "@/lib/react-query/queriesAndMutations";
-import { Loader } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import ProfileUploader from "@/components/ui/shared/ProfileUploader";
 
 const UpdateProfile = () => {
@@ -46,7 +46,7 @@ const UpdateProfile = () => {
   if (!currentUser)
     return (
       <div className="flex-center w-full h-full">
-        <Loader />
+        <Loader2 className='h-8 w-8 animate-spin' />
       </div>
     );
 
@@ -190,7 +190,7 @@ const UpdateProfile = () => {
                 type="submit"
                 className="shad-button_primary whitespace-nowrap"
                 disabled={isLoadingUpdate}>
-                {isLoadingUpdate && <Loader />}
+                {isLoadingUpdate && <Loader2 className='h-8 w-8 animate-spin' />}
                 Update Profile
               </Button>
             </div>
